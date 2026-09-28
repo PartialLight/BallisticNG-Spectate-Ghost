@@ -16,18 +16,12 @@ This mod has two in-game mod menu options:
 
 "Enable Spectating" determines whether or not the gameplay-altering code that allows for ghosts to be spectated (attaching the player ship to the ghost ship when you cross the finish line, disabling anti-skip and track recovery, forcing ships to stop before the finish line\) will actually be loaded into Speed Lap and Time Trial. Changes to this setting require a race restart to take effect.
 
-It also has some pre-defined keybinds:
+It also has some rebindable keybinds:
 
-Numpad 9 manually detaches the player ship from the ghost ship when pressed (be aware that crossing the finish line will automatically re-attach the player ship to the ghost ship). 
+The Follow Ghost Toggle Keybind will attach you to/detach you from the ghost ship.
 
-Numpad 7 manually attaches the player ship to the ghost ship when pressed (be aware that if there is no ghost saved/loaded for the current track+gamemode+speedclass+shipclass configuration, you will become stuck in the floor at the world origin point if you press this).
+The Render Ghost Toggle Keybind will hide/show the ghost ship.
 
-Numpad 5 manually respawns the player ship at any time when pressed. This is useful if you fall out of the map while detached from the ghost ship, as with track recovery disabled, there is no way to return to the track surface aside from respawning.
+The Respawn Keybind will respawn your ship onto the track.
 
-Numpad 3 will disable the rendering of the ghost ship when pressed.
-
-Numpad 1 will re-enable the rendering of the ghost ship when pressed.
-
-If you want to change these keybinds, you will need to open the SpectateGhost.cs file and edit lines 98, 102, 107, 112, and 116, enable "Always Recompile" in the Modding>Code Mods>Spectate Ghost menu, and relaunch the game to recompile the mod for your changes to take effect.
-
-A list of all the Keycodes you can use can be found at https://docs.unity3d.com/2020.3/Documentation/ScriptReference/KeyCode.html, under the Properties section.
+If you want to change these keybinds, you can do so in-game by going to Options>Game Options>Mods>Spectate Ghost. Clicking on the selector value ('None' by default) will allow you to scroll through a list of options instead of having to cycle through them one by one.

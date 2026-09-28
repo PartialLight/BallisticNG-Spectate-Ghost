@@ -33,7 +33,7 @@ namespace SpectateGhostMod
     public class SpectateGhostCodeMod : CodeMod
     {
         public override void OnRegistered(string modPath)
-        {
+        {            
             NgRaceEvents.OnCountdownStart += MonoBehaviour_Hook;
             NgRaceEvents.OnShipLapUpdate += Spectate_Ghost;
             NgRaceEvents.OnEventExit += Reset_Follow_Ghost_Event;
@@ -42,7 +42,7 @@ namespace SpectateGhostMod
         }
 
         public void MonoBehaviour_Hook()
-        {
+        {            
             if (SpectateGhostOptions.ModMenuOptions.EnableSpectatingToggle == true)
             {
                 GameObject SpectateGhostGameObject = new GameObject("SpectateGhostManager");
@@ -98,27 +98,19 @@ namespace SpectateGhostMod
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Keypad7) && Ships.PlayerOneShip.IsPlayer == true)
+            if (Input.GetKeyDown(SpectateGhostOptions.ModMenuOptions.FollowGhostToggleKeyCode) && Ships.PlayerOneShip.IsPlayer == true)
             {
-                Follow_Ghost = true;                
-            }
-            if (Input.GetKeyDown(KeyCode.Keypad9))
+                Follow_Ghost = !Follow_Ghost;                
+            }                        
+
+            if (Input.GetKeyDown(SpectateGhostOptions.ModMenuOptions.RenderGhostToggleKeyCode))
             {
-                Follow_Ghost = false;
+                Render_Ghost = !Render_Ghost;
             }
 
-            if (Input.GetKeyDown(KeyCode.Keypad5))
+            if (Input.GetKeyDown(SpectateGhostOptions.ModMenuOptions.RespawnKeyCode))
             {
                 Ships.PlayerOneShip.Respawn();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Keypad1))
-            {
-                Render_Ghost = true;
-            }
-            if (Input.GetKeyDown(KeyCode.Keypad3))
-            {
-                Render_Ghost = false;
             }
         }
 
