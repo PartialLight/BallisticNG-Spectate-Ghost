@@ -132,7 +132,7 @@ namespace SpectateGhostMod
                     Ships.PlayerOneShip.ShipCameraTransform.rotation = Quaternion.Euler(Ships.PlayerOneShip.ShipCameraTransform.rotation.eulerAngles.x, Ships.PlayerOneShip.ShipCameraTransform.rotation.eulerAngles.y, 0f);
                 }
                 
-                if (Ships.PlayerOneShip.CurrentSection.index == 0 && ((Ships.PlayerOneShip.CurrentLap == Race.MaxLaps) || (RaceManager.CurrentGamemode as GmSpeedLap != null)) )
+                if (Ships.PlayerOneShip.CurrentSection.index == NgTrackData.TrackManager.Instance.data.MaxIndex && ((Ships.PlayerOneShip.CurrentLap == Race.MaxLaps) || (RaceManager.CurrentGamemode as GmSpeedLap != null)) )
                 {
                     Follow_Ghost = false;
                     Ships.PlayerOneShip.Respawn();
